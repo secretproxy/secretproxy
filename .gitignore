@@ -1,0 +1,28 @@
+# Binary
+/secretproxy
+/secrets-proxy
+/secretproxy.test
+*.test
+
+# Build
+dist/
+coverage.out
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Go
+.gocache/
+
+# Local tool state
+.serena/
+.agents/
+.claude/

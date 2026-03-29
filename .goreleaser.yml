@@ -1,0 +1,32 @@
+version: 2
+
+builds:
+  - binary: secretproxy
+    main: ./cmd/secretproxy
+    ldflags:
+      - -s -w -X main.version={{.Version}}
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+
+archives:
+  - format: tar.gz
+
+changelog:
+  sort: asc
+
+brews:
+  - repository:
+      owner: secretproxy
+      name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+    homepage: https://github.com/secretproxy/secretproxy
+    description: "Local proxy that masks secrets in prompts before they reach the LLM API"
+    license: MIT
+    install: |
+      bin.install "secretproxy"
+    test: |
+      system bin/"secretproxy", "-version"

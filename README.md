@@ -39,7 +39,7 @@ Add to `~/.claude/settings.json`:
 }
 ```
 
-Optionally, install the skill so the agent understands how to work with masked secrets:
+Install the skill so the agent understands how to work with masked secrets (recommended):
 
 ```bash
 mkdir -p ~/.claude/skills/secret-proxy && curl -fsSL \

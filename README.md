@@ -42,7 +42,9 @@ Add to `~/.claude/settings.json`:
 Optionally, install the skill so the agent understands how to work with masked secrets:
 
 ```bash
-cp skill.md ~/.claude/skills/secret-proxy-secrets/SKILL.md
+mkdir -p ~/.claude/skills/secret-proxy && curl -fsSL \
+  https://raw.githubusercontent.com/secretproxy/secretproxy/main/skill.md \
+  -o ~/.claude/skills/secret-proxy/SKILL.md
 ```
 
 ### Codex CLI
@@ -53,10 +55,12 @@ Add to `~/.codex/config.yaml`:
 api_base_url: http://localhost:9900/codex
 ```
 
-Add the skill as a Codex system prompt:
+Install the skill so the agent understands how to work with masked secrets:
 
 ```bash
-cp skill.md ~/.codex/skills/secret-proxy-secrets/SKILL.md
+mkdir -p ~/.codex/skills/secret-proxy && curl -fsSL \
+  https://raw.githubusercontent.com/secretproxy/secretproxy/main/skill.md \
+  -o ~/.codex/skills/secret-proxy/SKILL.md
 ```
 
 ---
